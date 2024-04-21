@@ -22,6 +22,7 @@ import {
   EVENT_CHANGE,
   EVENT_KEYDOWN,
   getAdjustedSizes,
+  getAdjustedSizesKeepArea,
   getOffset,
   isFunction,
   isNumber,
@@ -846,7 +847,7 @@ export default class CropperSelection extends CropperElement {
     }
 
     if (isPositiveNumber(aspectRatio)) {
-      ({ width, height } = getAdjustedSizes({ aspectRatio, width, height }, 'cover'));
+      ({ width, height } = getAdjustedSizesKeepArea({ aspectRatio, width, height }, 'cover'));
     }
 
     if (x === this.x && y === this.y && width === this.width && height === this.height) {
